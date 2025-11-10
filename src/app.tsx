@@ -1,44 +1,30 @@
-import { useState } from "preact/hooks";
-import preactLogo from "./assets/preact.svg";
-import viteLogo from "/vite.svg";
+import { LocationProvider, ErrorBoundary, Router, Route } from "preact-iso";
 import "./app.css";
 
-export function App() {
-  const [count, setCount] = useState(0);
+// 404 component
+const NotFound = () => (
+  <div>
+    <h2>404 - Page Not Found</h2>
+    <p>The page you're looking for doesn't exist.</p>
+    <a href="/gh-toolbox/">Go back home</a>
+  </div>
+);
 
+function Navigation() {
+  return <nav className="navbar"></nav>;
+}
+
+export function App() {
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank" rel="noopener">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://preactjs.com" target="_blank" rel="noopener">
-          <img src={preactLogo} className="logo preact" alt="Preact logo" />
-        </a>
-      </div>
-      <h1>Vite + Preact</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/app.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p>
-        Check out{" "}
-        <a
-          href="https://preactjs.com/guide/v10/getting-started#create-a-vite-powered-preact-app"
-          target="_blank"
-          rel="noopener"
-        >
-          create-preact
-        </a>
-        , the official Preact + Vite starter
-      </p>
-      <p className="read-the-docs">
-        Click on the Vite and Preact logos to learn more
-      </p>
-    </>
+    <LocationProvider scope="/gh-toolbox">
+      <ErrorBoundary onError={(error) => console.error("Router Error:", error)}>
+        <Navigation />
+        <main>
+          <Router>
+            {[<Route default component={NotFound} />]}
+          </Router>
+        </main>
+      </ErrorBoundary>
+    </LocationProvider>
   );
 }

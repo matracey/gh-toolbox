@@ -20,6 +20,36 @@
   padding: 2em;
 }
 
+.navbar {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  border-bottom: 1px solid #333;
+}
+
+.navbar a {
+  color: #646cff;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  transition: background-color 0.2s;
+}
+
+.navbar a:hover {
+  background-color: rgba(100, 108, 255, 0.1);
+}
+
+.navbar a.active {
+  background-color: rgba(100, 108, 255, 0.2);
+  color: #fff;
+}
+
+.counter-page, .home-page {
+  text-align: center;
+}
+
 .read-the-docs {
   color: #888;
 }
