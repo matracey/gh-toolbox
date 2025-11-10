@@ -9,10 +9,10 @@ export function App() {
   return (
     <>
       <div>
-        <a href="https://vite.dev" target="_blank">
+        <a href="https://vite.dev" target="_blank" rel="noopener">
           <img src={viteLogo} className="logo" alt="Vite logo" />
         </a>
-        <a href="https://preactjs.com" target="_blank">
+        <a href="https://preactjs.com" target="_blank" rel="noopener">
           <img src={preactLogo} className="logo preact" alt="Preact logo" />
         </a>
       </div>
@@ -30,6 +30,7 @@ export function App() {
         <a
           href="https://preactjs.com/guide/v10/getting-started#create-a-vite-powered-preact-app"
           target="_blank"
+          rel="noopener"
         >
           create-preact
         </a>
