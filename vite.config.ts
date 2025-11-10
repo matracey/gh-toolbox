@@ -1,3 +1,4 @@
+import path from "node:path";
 import { defineConfig } from "vite";
 import preact from "@preact/preset-vite";
 import tailwindcss from "@tailwindcss/vite";
@@ -6,4 +7,9 @@ import tailwindcss from "@tailwindcss/vite";
 export default defineConfig({
   plugins: [preact(), tailwindcss()],
   base: "/gh-toolbox/",
+  resolve: {
+    alias: {
+      "@": path.resolve(__dirname, "./src"),
+    },
+  },
 });
