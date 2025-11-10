@@ -6,8 +6,9 @@ import {
   Route,
   useLocation,
 } from "preact-iso";
-import { linkStyles, textStyles } from "./utils/styles";
+import { textStyles } from "./utils/styles";
 import { DarkModeToggle } from "./components/DarkModeToggle";
+import { Button } from "./components/ui/button";
 
 // Synchronous import for Home (could be lazy too)
 import { Home } from "./components/Home";
@@ -24,9 +25,9 @@ const NotFound = () => (
     <p className={textStyles.caption + " mb-4"}>
       The page you're looking for doesn't exist.
     </p>
-    <a href="/gh-toolbox/" className={linkStyles.primary}>
-      Go back home
-    </a>
+    <Button asChild variant="link">
+      <a href="/gh-toolbox/">Go back home</a>
+    </Button>
   </div>
 );
 
@@ -36,12 +37,12 @@ function Navigation() {
 
   return (
     <nav className="flex gap-4 justify-center p-4 mb-8 border-b border-gray-300 dark:border-gray-700">
-      <a href="/gh-toolbox/" className={linkStyles.nav(path === "")}>
-        Home
-      </a>
-      <a href="/gh-toolbox/counter" className={linkStyles.nav(path === "counter")}>
-        Counter
-      </a>
+      <Button asChild variant={path === "" ? "default" : "ghost"}>
+        <a href="/gh-toolbox/">Home</a>
+      </Button>
+      <Button asChild variant={path === "counter" ? "default" : "ghost"}>
+        <a href="/gh-toolbox/counter">Counter</a>
+      </Button>
     </nav>
   );
 }
