@@ -1,4 +1,5 @@
 import {
+  lazy,
   LocationProvider,
   ErrorBoundary,
   Router,
@@ -9,6 +10,11 @@ import "./app.css";
 
 // Synchronous import for Home (could be lazy too)
 import { Home } from "./components/Home";
+
+// Lazy-loaded Counter component for code splitting
+const Counter = lazy(() =>
+  import("./components/Counter").then((m) => m.Counter)
+);
 
 // 404 component
 const NotFound = () => (
@@ -28,6 +34,12 @@ function Navigation() {
       <a href="/gh-toolbox/" className={path === "/gh-toolbox/" ? "active" : ""}>
         Home
       </a>
+      <a
+        href="/gh-toolbox/counter"
+        className={path === "/gh-toolbox/counter" ? "active" : ""}
+      >
+        Counter
+      </a>
     </nav>
   );
 }
@@ -40,6 +52,7 @@ export function App() {
         <main>
           <Router>
             <Route path="/gh-toolbox" component={Home} />
+            <Route path="/gh-toolbox/counter" component={Counter} />
             <Route default component={NotFound} />
           </Router>
         </main>
