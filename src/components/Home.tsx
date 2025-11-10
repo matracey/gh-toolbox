@@ -1,6 +1,7 @@
 import preactLogo from "../assets/preact.svg";
 import viteLogo from "/vite.svg";
-import { linkStyles, textStyles } from "../utils/styles";
+import { textStyles } from "../utils/styles";
+import { Button } from "./ui/button";
 
 export function Home() {
   return (
@@ -32,9 +33,9 @@ export function Home() {
       <div className={`space-y-4 ${textStyles.body}`}>
         <p>
           Navigate to the{" "}
-          <a href="/gh-toolbox/counter" className={linkStyles.primary}>
-            Counter
-          </a>{" "}
+          <Button asChild variant="link" className="h-auto p-0">
+            <a href="/gh-toolbox/counter">Counter</a>
+          </Button>{" "}
           page to see the routing in action!
         </p>
 
@@ -45,14 +46,15 @@ export function Home() {
 
         <p>
           Check out{" "}
-          <a
-            href="https://preactjs.com/guide/v10/getting-started#create-a-vite-powered-preact-app"
-            target="_blank"
-            rel="noopener"
-            className={linkStyles.primary}
-          >
-            create-preact
-          </a>
+          <Button asChild variant="link" className="h-auto p-0">
+            <a
+              href="https://preactjs.com/guide/v10/getting-started#create-a-vite-powered-preact-app"
+              target="_blank"
+              rel="noopener"
+            >
+              create-preact
+            </a>
+          </Button>
           , the official Preact + Vite starter
         </p>
 
