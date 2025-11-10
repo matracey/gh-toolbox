@@ -1,4 +1,5 @@
 import { useState, useEffect } from "preact/hooks";
+import { Button } from "./ui/button";
 
 function getDarkModePreference(): boolean {
   if (typeof window === "undefined") {
@@ -33,13 +34,15 @@ export function DarkModeToggle() {
   const [isDark, setIsDark] = useDarkMode();
 
   return (
-    <button
+    <Button
       type="button"
+      variant="outline"
+      size="icon"
       onClick={() => setIsDark(!isDark)}
-      className="fixed top-4 right-4 p-2 rounded-lg bg-gray-200 dark:bg-gray-800 text-gray-800 dark:text-gray-200 hover:bg-gray-300 dark:hover:bg-gray-700 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500"
+      className="fixed top-4 right-4"
       aria-label="Toggle dark mode"
     >
       {isDark ? "☀️" : "🌙"}
-    </button>
+    </Button>
   );
 }
