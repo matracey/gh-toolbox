@@ -4,6 +4,7 @@
     "npm:@preact/preset-vite@^2.10.2": "2.10.2_@babel+core@7.28.5_vite@7.2.2__@types+node@24.10.0__picomatch@4.0.3_preact@10.27.2_@types+node@24.10.0",
     "npm:@types/node@^24.6.0": "24.10.0",
     "npm:gh-pages@^6.2.0": "6.3.0",
+    "npm:preact-iso@^2.11.0": "2.11.0_preact@10.27.2_preact-render-to-string@6.6.3__preact@10.27.2",
     "npm:preact@^10.27.2": "10.27.2",
     "npm:rolldown-vite@7.1.14": "7.1.14_@types+node@24.10.0_picomatch@4.0.3",
     "npm:typescript@~5.9.3": "5.9.3"
@@ -1094,6 +1095,19 @@
         "source-map-js"
       ]
     },
+    "preact-iso@2.11.0_preact@10.27.2_preact-render-to-string@6.6.3__preact@10.27.2": {
+      "integrity": "sha512-oThWJQcgcnaWh6UKy1qrBkxIWp5CkqvnHiFdLiDUxfNkGdpQ5veGQw9wOVS0NDp7X8xo98wxE4wng5jLv1e9Ug==",
+      "dependencies": [
+        "preact",
+        "preact-render-to-string"
+      ]
+    },
+    "preact-render-to-string@6.6.3_preact@10.27.2": {
+      "integrity": "sha512-7oHG7jzjriqsFPkSPiPnzrQ0GcxFm6wOkYWNdStK5Ks9YlWSQQXKGBRAX4nKDdqX7HAQuRvI4pZNZMycK4WwDw==",
+      "dependencies": [
+        "preact"
+      ]
+    },
     "preact@10.27.2": {
       "integrity": "sha512-5SYSgFKSyhCbk6SrXyMpqjb5+MQBgfvEKE/OC+PujcY34sOpqtr+0AZQtPYx5IA6VxynQ7rUPCtKzyovpj9Bpg=="
     },
@@ -1296,6 +1310,7 @@
         "npm:@preact/preset-vite@^2.10.2",
         "npm:@types/node@^24.6.0",
         "npm:gh-pages@^6.2.0",
+        "npm:preact-iso@^2.11.0",
         "npm:preact@^10.27.2",
         "npm:rolldown-vite@7.1.14",
         "npm:typescript@~5.9.3"
