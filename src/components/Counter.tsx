@@ -1,11 +1,12 @@
 import { useState } from "preact/hooks";
-import { buttonStyles, cardStyles, textStyles } from "../utils/styles";
+import { Button } from "./ui/button";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./ui/card";
 
 function Counter() {
   const [count, setCount] = useState(0);
 
   return (
-    <div className="text-center space-y-8">
+    <div className="space-y-8">
       <Card>
         <CardHeader>
           <CardTitle>Counter</CardTitle>
