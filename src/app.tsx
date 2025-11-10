@@ -6,7 +6,7 @@ import {
   Route,
   useLocation,
 } from "preact-iso";
-import "./app.css";
+import { linkStyles, textStyles } from "./utils/styles";
 
 // Synchronous import for Home (could be lazy too)
 import { Home } from "./components/Home";
@@ -18,10 +18,14 @@ const Counter = lazy(() =>
 
 // 404 component
 const NotFound = () => (
-  <div>
-    <h2>404 - Page Not Found</h2>
-    <p>The page you're looking for doesn't exist.</p>
-    <a href="/gh-toolbox/">Go back home</a>
+  <div className="text-center">
+    <h2 className={textStyles.heading3 + " mb-4"}>404 - Page Not Found</h2>
+    <p className={textStyles.caption + " mb-4"}>
+      The page you're looking for doesn't exist.
+    </p>
+    <a href="/gh-toolbox/" className={linkStyles.primary}>
+      Go back home
+    </a>
   </div>
 );
 
@@ -30,14 +34,11 @@ function Navigation() {
   path = path.replace(/\/gh-toolbox\/?/, "");
 
   return (
-    <nav className="navbar">
-      <a href="/gh-toolbox/" className={path === "/gh-toolbox/" ? "active" : ""}>
+    <nav className="flex gap-4 justify-center p-4 mb-8 border-b border-gray-300 dark:border-gray-700">
+      <a href="/gh-toolbox/" className={linkStyles.nav(path === "")}>
         Home
       </a>
-      <a
-        href="/gh-toolbox/counter"
-        className={path === "/gh-toolbox/counter" ? "active" : ""}
-      >
+      <a href="/gh-toolbox/counter" className={linkStyles.nav(path === "counter")}>
         Counter
       </a>
     </nav>
@@ -46,17 +47,24 @@ function Navigation() {
 
 export function App() {
   return (
-    <LocationProvider scope="/gh-toolbox">
-      <ErrorBoundary onError={(error) => console.error("Router Error:", error)}>
-        <Navigation />
-        <main>
-          <Router>
-            <Route path="/gh-toolbox" component={Home} />
-            <Route path="/gh-toolbox/counter" component={Counter} />
-            <Route default component={NotFound} />
-          </Router>
-        </main>
-      </ErrorBoundary>
-    </LocationProvider>
+    <div class="min-h-screen bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100">
+      <DarkModeToggle />
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <LocationProvider scope="/gh-toolbox">
+          <ErrorBoundary
+            onError={(error) => console.error("Router Error:", error)}
+          >
+            <Navigation />
+            <main>
+              <Router>
+                <Route path="/gh-toolbox/" component={Home} />
+                <Route path="/gh-toolbox/counter" component={Counter} />
+                <Route default component={NotFound} />
+              </Router>
+            </main>
+          </ErrorBoundary>
+        </LocationProvider>
+      </div>
+    </div>
   );
 }
