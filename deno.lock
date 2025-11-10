@@ -3,6 +3,7 @@
   "specifiers": {
     "npm:@phosphor-icons/react@^2.1.10": "2.1.10_react@19.2.0_react-dom@19.2.0__react@19.2.0",
     "npm:@preact/preset-vite@^2.10.2": "2.10.2_@babel+core@7.28.5_vite@7.2.2__@types+node@24.10.0__picomatch@4.0.3_preact@10.27.2_@types+node@24.10.0",
+    "npm:@radix-ui/react-label@^2.1.8": "2.1.8_react@19.2.0_react-dom@19.2.0__react@19.2.0",
     "npm:@radix-ui/react-slot@^1.2.4": "1.2.4_react@19.2.0",
     "npm:@tailwindcss/vite@^4.1.17": "4.1.17_vite@7.2.2__@types+node@24.10.0__picomatch@4.0.3_@types+node@24.10.0",
     "npm:@types/node@^24.6.0": "24.10.0",
@@ -430,6 +431,22 @@
       "integrity": "sha512-z4eqJvfiNnFMHIIvXP3CY57y2WJs5g2v3X0zm9mEJkrkNv4rDxu+sg9Jh8EkXyeqBkB7SOcboo9dMVqhyrACIg==",
       "dependencies": [
         "react"
+      ]
+    },
+    "@radix-ui/react-label@2.1.8_react@19.2.0_react-dom@19.2.0__react@19.2.0": {
+      "integrity": "sha512-FmXs37I6hSBVDlO4y764TNz1rLgKwjJMQ0EGte6F3Cb3f4bIuHB/iLa/8I9VKkmOy+gNHq8rql3j686ACVV21A==",
+      "dependencies": [
+        "@radix-ui/react-primitive",
+        "react",
+        "react-dom"
+      ]
+    },
+    "@radix-ui/react-primitive@2.1.4_react@19.2.0_react-dom@19.2.0__react@19.2.0": {
+      "integrity": "sha512-9hQc4+GNVtJAIEPEqlYqW5RiYdrr8ea5XQ0ZOnD6fgru+83kqT15mq2OCcbe8KnjRZl5vF3ks69AKz3kh1jrhg==",
+      "dependencies": [
+        "@radix-ui/react-slot",
+        "react",
+        "react-dom"
       ]
     },
     "@radix-ui/react-slot@1.2.4_react@19.2.0": {
@@ -1489,6 +1506,7 @@
       "dependencies": [
         "npm:@phosphor-icons/react@^2.1.10",
         "npm:@preact/preset-vite@^2.10.2",
+        "npm:@radix-ui/react-label@^2.1.8",
         "npm:@radix-ui/react-slot@^1.2.4",
         "npm:@tailwindcss/vite@^4.1.17",
         "npm:@types/node@^24.6.0",
