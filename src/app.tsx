@@ -1,5 +1,14 @@
-import { LocationProvider, ErrorBoundary, Router, Route } from "preact-iso";
+import {
+  LocationProvider,
+  ErrorBoundary,
+  Router,
+  Route,
+  useLocation,
+} from "preact-iso";
 import "./app.css";
+
+// Synchronous import for Home (could be lazy too)
+import { Home } from "./components/Home";
 
 // 404 component
 const NotFound = () => (
@@ -11,7 +20,16 @@ const NotFound = () => (
 );
 
 function Navigation() {
-  return <nav className="navbar"></nav>;
+  let { path } = useLocation();
+  path = path.replace(/\/gh-toolbox\/?/, "");
+
+  return (
+    <nav className="navbar">
+      <a href="/gh-toolbox/" className={path === "/gh-toolbox/" ? "active" : ""}>
+        Home
+      </a>
+    </nav>
+  );
 }
 
 export function App() {
@@ -21,7 +39,8 @@ export function App() {
         <Navigation />
         <main>
           <Router>
-            {[<Route default component={NotFound} />]}
+            <Route path="/gh-toolbox" component={Home} />
+            <Route default component={NotFound} />
           </Router>
         </main>
       </ErrorBoundary>
