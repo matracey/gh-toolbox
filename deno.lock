@@ -6,6 +6,7 @@
     "npm:@radix-ui/react-label@^2.1.8": "2.1.8_react@19.2.0_react-dom@19.2.0__react@19.2.0",
     "npm:@radix-ui/react-separator@^1.1.8": "1.1.8_react@19.2.0_react-dom@19.2.0__react@19.2.0",
     "npm:@radix-ui/react-slot@^1.2.4": "1.2.4_react@19.2.0",
+    "npm:@radix-ui/react-switch@^1.2.6": "1.2.6_react@19.2.0_react-dom@19.2.0__react@19.2.0",
     "npm:@tailwindcss/vite@^4.1.17": "4.1.17_vite@7.2.2__@types+node@24.10.0__picomatch@4.0.3_@types+node@24.10.0",
     "npm:@types/node@^24.6.0": "24.10.0",
     "npm:class-variance-authority@~0.7.1": "0.7.1",
@@ -428,8 +429,17 @@
         "vite"
       ]
     },
+    "@radix-ui/primitive@1.1.3": {
+      "integrity": "sha512-JTF99U/6XIjCBo0wqkU5sK10glYe27MRRsfwoiq5zzOEZLHU3A3KCMa5X/azekYRCJ0HlwI0crAXS/5dEHTzDg=="
+    },
     "@radix-ui/react-compose-refs@1.1.2_react@19.2.0": {
       "integrity": "sha512-z4eqJvfiNnFMHIIvXP3CY57y2WJs5g2v3X0zm9mEJkrkNv4rDxu+sg9Jh8EkXyeqBkB7SOcboo9dMVqhyrACIg==",
+      "dependencies": [
+        "react"
+      ]
+    },
+    "@radix-ui/react-context@1.1.2_react@19.2.0": {
+      "integrity": "sha512-jCi/QKUM2r1Ju5a3J64TH2A5SpKAgh0LpknyqdQ4m6DCV0xJ2HG1xARRwNGPQfi1SLdLWZ1OJz6F4OMBBNiGJA==",
       "dependencies": [
         "react"
       ]
@@ -437,7 +447,15 @@
     "@radix-ui/react-label@2.1.8_react@19.2.0_react-dom@19.2.0__react@19.2.0": {
       "integrity": "sha512-FmXs37I6hSBVDlO4y764TNz1rLgKwjJMQ0EGte6F3Cb3f4bIuHB/iLa/8I9VKkmOy+gNHq8rql3j686ACVV21A==",
       "dependencies": [
-        "@radix-ui/react-primitive",
+        "@radix-ui/react-primitive@2.1.4_react@19.2.0_react-dom@19.2.0__react@19.2.0",
+        "react",
+        "react-dom"
+      ]
+    },
+    "@radix-ui/react-primitive@2.1.3_react@19.2.0_react-dom@19.2.0__react@19.2.0": {
+      "integrity": "sha512-m9gTwRkhy2lvCPe6QJp4d3G1TYEUHn/FzJUtq9MjH46an1wJU+GdoGC5VLof8RX8Ft/DlpshApkhswDLZzHIcQ==",
+      "dependencies": [
+        "@radix-ui/react-slot@1.2.3_react@19.2.0",
         "react",
         "react-dom"
       ]
@@ -445,7 +463,7 @@
     "@radix-ui/react-primitive@2.1.4_react@19.2.0_react-dom@19.2.0__react@19.2.0": {
       "integrity": "sha512-9hQc4+GNVtJAIEPEqlYqW5RiYdrr8ea5XQ0ZOnD6fgru+83kqT15mq2OCcbe8KnjRZl5vF3ks69AKz3kh1jrhg==",
       "dependencies": [
-        "@radix-ui/react-slot",
+        "@radix-ui/react-slot@1.2.4_react@19.2.0",
         "react",
         "react-dom"
       ]
@@ -453,15 +471,70 @@
     "@radix-ui/react-separator@1.1.8_react@19.2.0_react-dom@19.2.0__react@19.2.0": {
       "integrity": "sha512-sDvqVY4itsKwwSMEe0jtKgfTh+72Sy3gPmQpjqcQneqQ4PFmr/1I0YA+2/puilhggCe2gJcx5EBAYFkWkdpa5g==",
       "dependencies": [
-        "@radix-ui/react-primitive",
+        "@radix-ui/react-primitive@2.1.4_react@19.2.0_react-dom@19.2.0__react@19.2.0",
         "react",
         "react-dom"
+      ]
+    },
+    "@radix-ui/react-slot@1.2.3_react@19.2.0": {
+      "integrity": "sha512-aeNmHnBxbi2St0au6VBVC7JXFlhLlOnvIIlePNniyUNAClzmtAUEY8/pBiK3iHjufOlwA+c20/8jngo7xcrg8A==",
+      "dependencies": [
+        "@radix-ui/react-compose-refs",
+        "react"
       ]
     },
     "@radix-ui/react-slot@1.2.4_react@19.2.0": {
       "integrity": "sha512-Jl+bCv8HxKnlTLVrcDE8zTMJ09R9/ukw4qBs/oZClOfoQk/cOTbDn+NceXfV7j09YPVQUryJPHurafcSg6EVKA==",
       "dependencies": [
         "@radix-ui/react-compose-refs",
+        "react"
+      ]
+    },
+    "@radix-ui/react-switch@1.2.6_react@19.2.0_react-dom@19.2.0__react@19.2.0": {
+      "integrity": "sha512-bByzr1+ep1zk4VubeEVViV592vu2lHE2BZY5OnzehZqOOgogN80+mNtCqPkhn2gklJqOpxWgPoYTSnhBCqpOXQ==",
+      "dependencies": [
+        "@radix-ui/primitive",
+        "@radix-ui/react-compose-refs",
+        "@radix-ui/react-context",
+        "@radix-ui/react-primitive@2.1.3_react@19.2.0_react-dom@19.2.0__react@19.2.0",
+        "@radix-ui/react-use-controllable-state",
+        "@radix-ui/react-use-previous",
+        "@radix-ui/react-use-size",
+        "react",
+        "react-dom"
+      ]
+    },
+    "@radix-ui/react-use-controllable-state@1.2.2_react@19.2.0": {
+      "integrity": "sha512-BjasUjixPFdS+NKkypcyyN5Pmg83Olst0+c6vGov0diwTEo6mgdqVR6hxcEgFuh4QrAs7Rc+9KuGJ9TVCj0Zzg==",
+      "dependencies": [
+        "@radix-ui/react-use-effect-event",
+        "@radix-ui/react-use-layout-effect",
+        "react"
+      ]
+    },
+    "@radix-ui/react-use-effect-event@0.0.2_react@19.2.0": {
+      "integrity": "sha512-Qp8WbZOBe+blgpuUT+lw2xheLP8q0oatc9UpmiemEICxGvFLYmHm9QowVZGHtJlGbS6A6yJ3iViad/2cVjnOiA==",
+      "dependencies": [
+        "@radix-ui/react-use-layout-effect",
+        "react"
+      ]
+    },
+    "@radix-ui/react-use-layout-effect@1.1.1_react@19.2.0": {
+      "integrity": "sha512-RbJRS4UWQFkzHTTwVymMTUv8EqYhOp8dOOviLj2ugtTiXRaRQS7GLGxZTLL1jWhMeoSCf5zmcZkqTl9IiYfXcQ==",
+      "dependencies": [
+        "react"
+      ]
+    },
+    "@radix-ui/react-use-previous@1.1.1_react@19.2.0": {
+      "integrity": "sha512-2dHfToCj/pzca2Ck724OZ5L0EVrr3eHRNsG/b3xQJLA2hZpVCS99bLAX+hm1IHXDEnzU6by5z/5MIY794/a8NQ==",
+      "dependencies": [
+        "react"
+      ]
+    },
+    "@radix-ui/react-use-size@1.1.1_react@19.2.0": {
+      "integrity": "sha512-ewrXRDTAqAXlkl6t/fkXWNAhFX9I+CkKlw6zjEwk86RSPKwZr3xpBRso655aqYafwtnbpHLj6toFzmd6xdVptQ==",
+      "dependencies": [
+        "@radix-ui/react-use-layout-effect",
         "react"
       ]
     },
@@ -1518,6 +1591,7 @@
         "npm:@radix-ui/react-label@^2.1.8",
         "npm:@radix-ui/react-separator@^1.1.8",
         "npm:@radix-ui/react-slot@^1.2.4",
+        "npm:@radix-ui/react-switch@^1.2.6",
         "npm:@tailwindcss/vite@^4.1.17",
         "npm:@types/node@^24.6.0",
         "npm:class-variance-authority@~0.7.1",
