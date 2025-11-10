@@ -13,6 +13,7 @@
     "deploy": "npm run build && gh-pages -d dist"
   },
   "dependencies": {
+    "@phosphor-icons/react": "^2.1.10",
     "@tailwindcss/vite": "^4.1.17",
     "preact": "^10.27.2",
     "preact-iso": "^2.11.0",
