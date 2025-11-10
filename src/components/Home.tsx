@@ -4,9 +4,9 @@ import { linkStyles, textStyles } from "../utils/styles";
 
 export function Home() {
   return (
-    <div class="text-center space-y-8">
-      <div class="flex gap-8 justify-center items-center">
-        <a href="https://vite.dev" target="_blank" rel="noopener" class="group">
+    <div className="text-center space-y-8">
+      <div className="flex gap-8 justify-center items-center">
+        <a href="https://vite.dev" target="_blank" rel="noopener" className="group">
           <img
             src={viteLogo}
             className="h-24 p-6 transition-all duration-300 hover:drop-shadow-[0_0_2em_#646cffaa] group-hover:animate-pulse"

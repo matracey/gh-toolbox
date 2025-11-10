@@ -7,6 +7,7 @@ import {
   useLocation,
 } from "preact-iso";
 import { linkStyles, textStyles } from "./utils/styles";
+import { DarkModeToggle } from "./components/DarkModeToggle";
 
 // Synchronous import for Home (could be lazy too)
 import { Home } from "./components/Home";
@@ -47,9 +48,9 @@ function Navigation() {
 
 export function App() {
   return (
-    <div class="min-h-screen bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100">
+    <div className="min-h-screen bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100">
       <DarkModeToggle />
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div className="max-w-5xl mx-auto px-8 py-8">
         <LocationProvider scope="/gh-toolbox">
           <ErrorBoundary
             onError={(error) => console.error("Router Error:", error)}
